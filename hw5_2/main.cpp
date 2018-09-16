@@ -4,6 +4,8 @@ vector宣告: vector<型態>
 vector塞值: num.push_back(temp)
 取vector大小: num.size()
 取vector某個位置的值: num.at(位置)
+
+可改為先取得數字的位數，再使用動態宣告存數字
 */
 
 #include <iostream>
@@ -14,12 +16,13 @@ bool isPalindrome(int input) {
     int temp;
     while(input != 0) {
         temp = input % 10;
-        num.push_back(temp);
+        //num.push_back(temp);
+        num.insert(num.begin(), temp);
         input /= 10;
     }
     int begin = 0;
     int end = num.size() - 1;
-    while (begin != end) {
+    while (begin < end) {
         if (num.at(begin) != num.at(end)) {
             return 0;
         }
@@ -31,7 +34,7 @@ bool isPalindrome(int input) {
 
 int main() {
     int input;
-    do{
+    while(1){
         cout << "Please input a positive number(>9): ";
         cin >> input;
         if (input <= 9) {
@@ -46,6 +49,6 @@ int main() {
                 cout << "It is not a Palindrome" << endl;
             }
         }
-    }while(1);
+    }
     return 0;
 }
