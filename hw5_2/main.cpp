@@ -29,8 +29,7 @@ bool isPalindrome(int input) {
     return 1;
 }
 
-int main()
-{
+int main() {
     int input;
     do{
         cout << "Please input a positive number(>9): ";
