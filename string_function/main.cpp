@@ -2,7 +2,8 @@
 #include <string>
 using namespace std;
 
-int _strlen(const char *s) {
+//計算字串長度
+int _strlen(const char *s) { 
     int length = 0;
     while(*(s + length) != '\0') {
         length++;
@@ -10,6 +11,7 @@ int _strlen(const char *s) {
     return length;
 }
 
+//比較字串是否相等
 int _strcmp( const char *s1, const char *s2 ) {
     if (*s1 == '\0' && *s2 == 0) {
         return (*s1 - *s2);
@@ -34,6 +36,7 @@ int _strcmp( const char *s1, const char *s2 ) {
     return 0;
 }
 
+//字串複製
 char * _strcpy( char *s1, const char *s2 ) {
     int temp = 0;
     while (*s2 != '\0') {
@@ -45,6 +48,7 @@ char * _strcpy( char *s1, const char *s2 ) {
     return s1;
 }
 
+//字串複製(複製部分字串)
 char * _strncpy( char *s1, const char *s2, int size_t ) {
     for (int i = 0; (*s2 != '\0') && i < size_t; i++, s2++) {
         *(s1 + i) = *s2;
@@ -53,6 +57,7 @@ char * _strncpy( char *s1, const char *s2, int size_t ) {
     return s1;
 }
 
+//字串串接
 char * _strcat( char *s1, const char *s2 ) {
     char *ptr = s1;
     while (*s1 != '\0') {
@@ -67,6 +72,7 @@ char * _strcat( char *s1, const char *s2 ) {
     return ptr;
 }
 
+//字串串接(串接部分字串)
 char * _strncat( char *s1, const char *s2, int size_t ) {
     char *ptr = s1;
     while (*s1 != '\0') {
@@ -100,7 +106,7 @@ int main() {
     const char *s2 = s_string_2.c_str();
     char s3[20];
     char s4[3];
-    char s5[100] = "";//�p�G�S�� ="" ���� �b�O�г̫�@�Ӧ�m���ɭ� �|�O�Ш� s3[99]�A������[���r��N�|�W�Ls3[100]���}�C
+    char s5[100] = "";//如果沒有 ="" 的話 在記憶最後一個位置的時候 會記憶到 s3[99]，之後附加的字串就會超過s3[100]的陣列
     char s6[100] = "";
     //cout << *(s+1);
     cout << "strlen of string: " << _strlen(s) << endl;
