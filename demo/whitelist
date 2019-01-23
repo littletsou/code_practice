@@ -1,0 +1,4 @@
+./wnc
+./wnc/dir2*
+./wnc/file2
+./wnc/file3.c
